@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Isabella — Estudante de Desenvolvimento de Sistemas. Transformando ideias em projetos por meio da tecnologia.">
+  <title>Isabella | Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Triângulos Geométricos Animados (La Boîte à Slide) ===== -->
+  <div class="triangles-container" aria-hidden="true" id="trianglesContainer"></div>
+
+  <!-- ===== Navegação (Studio Namma) ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav__logo">
+        <span class="nav__logo-accent">I</span>sabella
+      </a>
+
+      <div class="nav__menu" id="navMenu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#inicio" class="nav__link active-link">Início</a>
+          </li>
+          <li class="nav__item">
+            <a href="#sobre" class="nav__link">Sobre mim</a>
+          </li>
+          <li class="nav__item">
+            <a href="#tecnologias" class="nav__link">Tecnologias</a>
+          </li>
+          <li class="nav__item">
+            <a href="#projetos" class="nav__link">Projetos</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contato" class="nav__link">Contato</a>
+          </li>
+        </ul>
+        <button class="nav__close" id="navClose" aria-label="Fechar menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero / Início ===== -->
+    <section class="hero section" id="inicio">
+      <!-- Elemento giratório abstrato 3D em grande escala (Sobha Privy Collection) -->
+      <div class="hero__orb" aria-hidden="true">
+        <div class="hero__orb-glow"></div>
+        <div class="hero__orb-inner"></div>
+        <div class="hero__orb-ring hero__orb-ring--1"></div>
+        <div class="hero__orb-ring hero__orb-ring--2"></div>
+        <div class="hero__orb-ring hero__orb-ring--3"></div>
+        <div class="hero__orb-ring hero__orb-ring--4"></div>
+      </div>
+
+      <div class="hero__content container">
+        <p class="hero__greeting reveal">Olá, eu sou</p>
+        <h1 class="hero__name reveal">
+          <span class="hero__name-highlight">Isabella</span>
+        </h1>
+        <h2 class="hero__title reveal">Estudante de Desenvolvimento de Sistemas</h2>
+        <p class="hero__phrase reveal">Transformando ideias em projetos por meio da tecnologia.</p>
+        <a href="#projetos" class="hero__btn reveal">
+          Ver meus projetos
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="hero__scroll-mouse">
+          <div class="hero__scroll-wheel"></div>
+        </div>
+        <span>Role para baixo</span>
+      </div>
+    </section>
+
+    <!-- ===== Sobre Mim ===== -->
+    <section class="about section" id="sobre">
+      <div class="container">
+        <h2 class="section__title reveal">
+          Sobre <span class="text-accent">mim</span>
+        </h2>
+        <p class="section__subtitle reveal">Conheça um pouco da minha trajetória e paixão por tecnologia</p>
+
+        <div class="about__grid">
+          <div class="about__info reveal">
+            <div class="about__description">
+              <p>Olá! Sou a <strong>Isabella</strong>, técnica em Tecnologia da Informação e atualmente estudante de Desenvolvimento de Sistemas. Sou apaixonada por programação e criação de soluções digitais, transformando ideias em projetos reais por meio da tecnologia.</p>
+              <p>Busco constantemente aprender novas ferramentas e aprofundar boas práticas de desenvolvimento, com foco na construção de aplicações web funcionais, responsivas e centradas na experiência do usuário.</p>
+            </div>
+
+            <div class="about__details">
+              <div class="about__detail-item">
+                <div class="about__detail-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Formação</h3>
+                  <p>Técnico em Tecnologia da Informação</p>
+                </div>
+              </div>
+
+              <div class="about__detail-item">
+                <div class="about__detail-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Atuação</h3>
+                  <p>Estudante de Desenvolvimento de Sistemas</p>
+                </div>
+              </div>
+
+              <div class="about__detail-item">
+                <div class="about__detail-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Lema</h3>
+                  <p>Transformando ideias em projetos por meio da tecnologia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Tecnologias ===== -->
+    <section class="skills section" id="tecnologias">
+      <div class="container">
+        <h2 class="section__title reveal">
+          Minhas <span class="text-accent">Tecnologias</span>
+        </h2>
+        <p class="section__subtitle reveal">Linguagens e ferramentas com as quais desenvolvo meus projetos</p>
+
+        <div class="skills__grid">
+          <!-- JavaScript -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+                <path d="M3 3h18v18H3V3zm15.65 14.7c.65 0 1.1-.3 1.45-.75.3-.4.45-.9.45-1.6 0-.85-.35-1.55-1.05-2-.6-.4-1.6-.75-2.75-1.15-1.3-.4-2.25-.8-2.75-1.25-.65-.6-.95-1.35-.95-2.25 0-1.1.4-1.95 1.25-2.6.85-.65 2-.95 3.35-.95 1.2 0 2.2.25 2.95.8.75.5 1.2 1.3 1.25 2.3h-2.35c-.05-.55-.25-.95-.6-1.25-.4-.3-1-.45-1.7-.45-.65 0-1.15.15-1.5.45-.35.3-.5.7-.5 1.2 0 .45.2.8.55 1.1.35.3 1.2.65 2.5 1.1 1.4.45 2.4.95 3 1.45.65.65 1 1.45 1 2.45 0 1.25-.45 2.2-1.35 2.85-.9.65-2.1.95-3.6.95-1.4 0-2.55-.3-3.4-.95-.85-.6-1.35-1.5-1.4-2.65h2.35c.05.7.35 1.2.8 1.5.5.3 1.2.5 2.1.5zm-8.35-.1c.5 0 .9-.15 1.2-.45.3-.3.45-.75.45-1.35v-8.3h2.35v8.35c0 1.3-.4 2.25-1.2 2.85-.8.6-1.85.9-3.2.9-.95 0-1.8-.15-2.45-.5-.65-.35-1.1-.9-1.3-1.65l2.2-.9c.1.4.25.7.45.9.2.15.45.2.75.2z"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">JavaScript</h3>
+            <p class="skill-card__desc">Desenvolvimento interativo no frontend e backend</p>
+          </div>
+
+          <!-- Node.js -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+                <path d="M12 2l9.5 5.5v11L12 24l-9.5-5.5v-11L12 2zm0 2.3L4.5 8.7v8.6l7.5 4.4 7.5-4.4V8.7L12 4.3zm-1 5.2h2v6.5h-2V9.5zm1-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">Node.js</h3>
+            <p class="skill-card__desc">Ambiente de execução JavaScript para construção de APIs</p>
+          </div>
+
+          <!-- React -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+                <path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-7c4.97 0 9 1.79 9 4 0 1.2-.8 2.28-2.12 3.03.62 1.3 1.12 2.76 1.12 4.3 0 4.97-3.58 9-8 9-1.2 0-2.28-.8-3.03-2.12-1.3.62-2.76 1.12-4.3 1.12-4.97 0-9-3.58-9-8 0-1.2.8-2.28 2.12-3.03-.62-1.3-1.12-2.76-1.12-4.3 0-4.97 3.58-9 8-9 1.2 0 2.28.8 3.03 2.12 1.3-.62 2.76-1.12 4.3-1.12zm0 1.5c-3.87 0-7 1.34-7 3s3.13 3 7 3 7-1.34 7-3-3.13-3-7-3zm-6.06 4.44C4.38 8.86 3.5 10.36 3.5 12c0 3.87 2.69 7 6 7 .77 0 1.5-.18 2.19-.51-1.37-1.89-2.39-4.22-2.75-6.55zm12.12 0c-.36 2.33-1.38 4.66-2.75 6.55.69.33 1.42.51 2.19.51 3.31 0 6-3.13 6-7 0-1.64-.88-3.14-2.44-4.06z"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">React</h3>
+            <p class="skill-card__desc">Criação de interfaces de usuário dinâmicas e componentizadas</p>
+          </div>
+
+          <!-- HTML -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+                <path d="M4.5 2h15l-1.36 15.34L12 20.5l-6.14-3.16L4.5 2zm13.14 3.5H6.36l.4 4.5h8.98l-.34 3.78L12 15.1l-3.4-.92-.22-2.48H6.04l.42 4.4 5.54 1.54 5.54-1.54.7-7.88h-9.9l-.2-2.2h10.3l.2-2.5z"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">HTML</h3>
+            <p class="skill-card__desc">Estruturação semântica, acessível e otimizada para web</p>
+          </div>
+
+          <!-- CSS -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+                <path d="M4.5 2h15l-1.36 15.34L12 20.5l-6.14-3.16L4.5 2zm13.14 3.5H6.36l.3 3.5h10.68l-.4 4.38L12 15.1l-3.4-.92-.22-2.48H6.04l.42 4.4 5.54 1.54 5.54-1.54.8-8.88H6.86l-.16-1.8h11.14l.2-2.5z"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">CSS</h3>
+            <p class="skill-card__desc">Estilização moderna, layouts responsivos e efeitos visuais</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projetos ===== -->
+    <section class="projects section" id="projetos">
+      <div class="container">
+        <h2 class="section__title reveal">
+          Meus <span class="text-accent">Projetos</span>
+        </h2>
+        <p class="section__subtitle reveal">Trabalhos práticos desenvolvidos com foco em qualidade e usabilidade</p>
+
+        <div class="projects__grid">
+          <!-- Projeto 1: Projeto Login -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="assets/projeto-login.png" alt="Captura de tela do Projeto Login" loading="lazy">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Projeto Login</h3>
+              <p class="project-card__description">Aplicação web desenvolvida em React para autenticação e gestão de usuários, estruturada com rotas dinâmicas incluindo telas de login, perfil de usuário e listagem.</p>
+              <div class="project-card__tags">
+                <span class="project-card__tag">React</span>
+                <span class="project-card__tag">JavaScript</span>
+                <span class="project-card__tag">Vite</span>
+                <span class="project-card__tag">React Router</span>
+                <span class="project-card__tag">CSS</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://projeto-login-snowy.vercel.app/" class="project-card__btn project-card__btn--primary" target="_blank" rel="noopener noreferrer">
+                  Ver projeto
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="https://github.com/isabellacastro02/projeto-login" class="project-card__btn project-card__btn--secondary" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 2: RPG -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="assets/rpg-ag.png" alt="Captura de tela do Projeto RPG" loading="lazy">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">RPG (Status & Matérias)</h3>
+              <p class="project-card__description">Aplicação interativa em React baseada no gerenciamento de estados dinâmicos (useState) para acompanhamento de notas escolares por disciplina, com cálculo de aprovação e status em tempo real.</p>
+              <div class="project-card__tags">
+                <span class="project-card__tag">React</span>
+                <span class="project-card__tag">JavaScript</span>
+                <span class="project-card__tag">Vite</span>
+                <span class="project-card__tag">CSS</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://rpg-ag.vercel.app/" class="project-card__btn project-card__btn--primary" target="_blank" rel="noopener noreferrer">
+                  Ver projeto
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="https://github.com/isabellacastro02/rpg-AG" class="project-card__btn project-card__btn--secondary" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 3: BioConecta -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="assets/bioconecta.png" alt="Captura de tela do Projeto BioConecta" loading="lazy">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">BioConecta</h3>
+              <p class="project-card__description">Sistema web educacional de apoio ao ensino de Biologia, reunindo conteúdos modulares, atividades didáticas, banco de questões com resoluções comentadas e painéis interativos para professores e alunos.</p>
+              <div class="project-card__tags">
+                <span class="project-card__tag">HTML5</span>
+                <span class="project-card__tag">CSS3</span>
+                <span class="project-card__tag">JavaScript ES6</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://backend-liard-omega-89.vercel.app/" class="project-card__btn project-card__btn--primary" target="_blank" rel="noopener noreferrer">
+                  Ver projeto
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 4: Apple Manager -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="assets/apple-manager.png" alt="Captura de tela do Projeto Apple Manager" loading="lazy">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Apple Manager</h3>
+              <p class="project-card__description">Sistema de gerenciamento de aparelhos Apple com interface responsiva para cadastro, edição, exclusão e listagem de dispositivos em tempo real, integrado a uma API REST com backend em Node.js e Express.</p>
+              <div class="project-card__tags">
+                <span class="project-card__tag">JavaScript</span>
+                <span class="project-card__tag">Node.js</span>
+                <span class="project-card__tag">Express</span>
+                <span class="project-card__tag">HTML5</span>
+                <span class="project-card__tag">CSS3</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://apple-9uku.vercel.app/" class="project-card__btn project-card__btn--primary" target="_blank" rel="noopener noreferrer">
+                  Ver projeto
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contato ===== -->
+    <section class="contact section" id="contato">
+      <div class="container">
+        <h2 class="section__title reveal">
+          Entre em <span class="text-accent">Contato</span>
+        </h2>
+        <p class="section__subtitle reveal">Vamos conversar? Envie uma mensagem pelo formulário ou conecte-se nas redes</p>
+
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <h3 class="contact__info-title">Canais de Contato</h3>
+
+            <div class="contact__info-item">
+              <div class="contact__info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Mensagem Direta</h4>
+                <p>Envie sua mensagem pelo formulário ao lado para contato direto.</p>
+              </div>
+            </div>
+
+            <div class="contact__info-item">
+              <div class="contact__info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div>
+                <h4>Instagram</h4>
+                <a href="https://instagram.com/isabellacastro7105" target="_blank" rel="noopener noreferrer" class="contact__link-text">@isabellacastro7105</a>
+              </div>
+            </div>
+
+            <div class="contact__social">
+              <h4>Perfis e Conexões</h4>
+              <div class="contact__social-links">
+                <a href="https://github.com/isabellacastro02" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://instagram.com/isabellacastro7105" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact__form reveal" id="contactForm" novalidate>
+            <div class="form__group">
+              <label for="name" class="form__label">Nome</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Seu nome completo" required autocomplete="name">
+              <span class="form__error" id="nameError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">E-mail</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="seu@email.com" required autocomplete="email">
+              <span class="form__error" id="emailError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="subject" class="form__label">Assunto</label>
+              <input type="text" id="subject" name="subject" class="form__input" placeholder="Assunto da mensagem" required>
+              <span class="form__error" id="subjectError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label">Mensagem</label>
+              <textarea id="message" name="message" class="form__input form__textarea" placeholder="Escreva sua mensagem..." rows="5" required></textarea>
+              <span class="form__error" id="messageError"></span>
+            </div>
+
+            <button type="submit" class="form__submit">
+              Enviar mensagem
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <div class="form__success" id="formSuccess">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <p>Mensagem registrada com sucesso! Em breve entrarei em contato.</p>
+              <small>Nota: Este formulário é demonstrativo e valida as informações localmente.</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Rodapé ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#inicio" class="footer__logo">
+            <span class="nav__logo-accent">I</span>sabella
+          </a>
+          <p class="footer__tagline">Transformando ideias em projetos por meio da tecnologia.</p>
+        </div>
+
+        <div class="footer__nav">
+          <h4 class="footer__title">Navegação</h4>
+          <ul class="footer__links">
+            <li><a href="#inicio" class="footer__link">Início</a></li>
+            <li><a href="#sobre" class="footer__link">Sobre mim</a></li>
+            <li><a href="#tecnologias" class="footer__link">Tecnologias</a></li>
+            <li><a href="#projetos" class="footer__link">Projetos</a></li>
+            <li><a href="#contato" class="footer__link">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__social-col">
+          <h4 class="footer__title">Redes</h4>
+          <div class="footer__social">
+            <a href="https://github.com/isabellacastro02" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com/isabellacastro7105" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Isabella. Todos os direitos reservados.</p>
+        <p>Desenvolvido com <span class="text-accent">&hearts;</span> por Isabella</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
