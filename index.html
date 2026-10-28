@@ -31,9 +31,6 @@
             <a href="#sobre" class="nav__link">Sobre mim</a>
           </li>
           <li class="nav__item">
-            <a href="#tecnologias" class="nav__link">Tecnologias</a>
-          </li>
-          <li class="nav__item">
             <a href="#projetos" class="nav__link">Projetos</a>
           </li>
           <li class="nav__item">
@@ -81,13 +78,8 @@
     <!-- ===== Hero / Início ===== -->
     <section class="hero section" id="inicio">
       <!-- Elemento giratório abstrato 3D em grande escala (Sobha Privy Collection) -->
-      <div class="hero__orb" aria-hidden="true">
-        <div class="hero__orb-glow"></div>
-        <div class="hero__orb-inner"></div>
-        <div class="hero__orb-ring hero__orb-ring--1"></div>
-        <div class="hero__orb-ring hero__orb-ring--2"></div>
-        <div class="hero__orb-ring hero__orb-ring--3"></div>
-        <div class="hero__orb-ring hero__orb-ring--4"></div>
+      <div class="hero__orb" aria-hidden="true" id="heroOrb">
+        <canvas id="heroOrbCanvas" class="hero__orb-canvas"></canvas>
       </div>
 
       <div class="hero__content container">
@@ -123,118 +115,130 @@
         <p class="section__subtitle reveal">Conheça um pouco da minha trajetória e paixão por tecnologia</p>
 
         <div class="about__grid">
-          <div class="about__info reveal">
-            <div class="about__description">
-              <p>Olá! Sou a <strong>Isabella</strong>, técnica em Tecnologia da Informação e atualmente estudante de Desenvolvimento de Sistemas. Sou apaixonada por programação e criação de soluções digitais, transformando ideias em projetos reais por meio da tecnologia.</p>
-              <p>Busco constantemente aprender novas ferramentas e aprofundar boas práticas de desenvolvimento, com foco na construção de aplicações web funcionais, responsivas e centradas na experiência do usuário.</p>
-            </div>
+          <div class="about__intro reveal">
+            <p>Olá! Sou a <strong>Isabella</strong>, técnica em Tecnologia da Informação e atualmente estudante de Desenvolvimento de Sistemas. Sou apaixonada por programação e criação de soluções digitais, transformando ideias em projetos reais por meio da tecnologia.</p>
+            <p>Busco constantemente aprender novas ferramentas e aprofundar boas práticas de desenvolvimento, com foco na construção de aplicações web funcionais, responsivas e centradas na experiência do usuário.</p>
+          </div>
 
-            <div class="about__details">
-              <div class="about__detail-item">
-                <div class="about__detail-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                  </svg>
+          <div class="about__columns">
+            <!-- Coluna 1: Formação, atuação e lema -->
+            <div class="about__column about__column--trajectory reveal">
+              <h3 class="about__column-title">
+                <span class="about__column-title-dot"></span> Formação, atuação e lema
+              </h3>
+              <div class="about__details">
+                <div class="about__detail-item">
+                  <div class="about__detail-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                  </div>
+                  <div class="about__detail-text">
+                    <h4>Formação</h4>
+                    <p>Técnico em Tecnologia da Informação</p>
+                  </div>
                 </div>
-                <div>
-                  <h3>Formação</h3>
-                  <p>Técnico em Tecnologia da Informação</p>
+
+                <div class="about__detail-item">
+                  <div class="about__detail-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  </div>
+                  <div class="about__detail-text">
+                    <h4>Atuação</h4>
+                    <p>Estudante de Desenvolvimento de Sistemas</p>
+                  </div>
+                </div>
+
+                <div class="about__detail-item">
+                  <div class="about__detail-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="about__detail-text">
+                    <h4>Lema</h4>
+                    <p>Transformando ideias em projetos por meio da tecnologia</p>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div class="about__detail-item">
-                <div class="about__detail-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
+            <!-- Coluna 2: Tecnologias -->
+            <div class="about__column about__column--skills reveal" id="tecnologias">
+              <h3 class="about__column-title">
+                <span class="about__column-title-dot"></span> Tecnologias
+              </h3>
+              <div class="about__skills-grid">
+                <!-- JavaScript -->
+                <div class="about__skill-card">
+                  <div class="about__skill-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                      <path d="M3 3h18v18H3V3zm15.65 14.7c.65 0 1.1-.3 1.45-.75.3-.4.45-.9.45-1.6 0-.85-.35-1.55-1.05-2-.6-.4-1.6-.75-2.75-1.15-1.3-.4-2.25-.8-2.75-1.25-.65-.6-.95-1.35-.95-2.25 0-1.1.4-1.95 1.25-2.6.85-.65 2-.95 3.35-.95 1.2 0 2.2.25 2.95.8.75.5 1.2 1.3 1.25 2.3h-2.35c-.05-.55-.25-.95-.6-1.25-.4-.3-1-.45-1.7-.45-.65 0-1.15.15-1.5.45-.35.3-.5.7-.5 1.2 0 .45.2.8.55 1.1.35.3 1.2.65 2.5 1.1 1.4.45 2.4.95 3 1.45.65.65 1 1.45 1 2.45 0 1.25-.45 2.2-1.35 2.85-.9.65-2.1.95-3.6.95-1.4 0-2.55-.3-3.4-.95-.85-.6-1.35-1.5-1.4-2.65h2.35c.05.7.35 1.2.8 1.5.5.3 1.2.5 2.1.5zm-8.35-.1c.5 0 .9-.15 1.2-.45.3-.3.45-.75.45-1.35v-8.3h2.35v8.35c0 1.3-.4 2.25-1.2 2.85-.8.6-1.85.9-3.2.9-.95 0-1.8-.15-2.45-.5-.65-.35-1.1-.9-1.3-1.65l2.2-.9c.1.4.25.7.45.9.2.15.45.2.75.2z"/>
+                    </svg>
+                  </div>
+                  <div class="about__skill-info">
+                    <h4>JavaScript</h4>
+                    <p>Desenvolvimento interativo no frontend e backend</p>
+                  </div>
                 </div>
-                <div>
-                  <h3>Atuação</h3>
-                  <p>Estudante de Desenvolvimento de Sistemas</p>
+
+                <!-- Node.js -->
+                <div class="about__skill-card">
+                  <div class="about__skill-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                      <path d="M12 2l9.5 5.5v11L12 24l-9.5-5.5v-11L12 2zm0 2.3L4.5 8.7v8.6l7.5 4.4 7.5-4.4V8.7L12 4.3zm-1 5.2h2v6.5h-2V9.5zm1-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+                    </svg>
+                  </div>
+                  <div class="about__skill-info">
+                    <h4>Node.js</h4>
+                    <p>Ambiente de execução JavaScript para construção de APIs</p>
+                  </div>
+                </div>
+
+                <!-- React -->
+                <div class="about__skill-card">
+                  <div class="about__skill-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                      <path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-7c4.97 0 9 1.79 9 4 0 1.2-.8 2.28-2.12 3.03.62 1.3 1.12 2.76 1.12 4.3 0 4.97-3.58 9-8 9-1.2 0-2.28-.8-3.03-2.12-1.3.62-2.76 1.12-4.3 1.12-4.97 0-9-3.58-9-8 0-1.2.8-2.28 2.12-3.03-.62-1.3-1.12-2.76-1.12-4.3 0-4.97 3.58-9 8-9 1.2 0 2.28.8 3.03 2.12 1.3-.62 2.76-1.12 4.3-1.12zm0 1.5c-3.87 0-7 1.34-7 3s3.13 3 7 3 7-1.34 7-3-3.13-3-7-3zm-6.06 4.44C4.38 8.86 3.5 10.36 3.5 12c0 3.87 2.69 7 6 7 .77 0 1.5-.18 2.19-.51-1.37-1.89-2.39-4.22-2.75-6.55zm12.12 0c-.36 2.33-1.38 4.66-2.75 6.55.69.33 1.42.51 2.19.51 3.31 0 6-3.13 6-7 0-1.64-.88-3.14-2.44-4.06z"/>
+                    </svg>
+                  </div>
+                  <div class="about__skill-info">
+                    <h4>React</h4>
+                    <p>Criação de interfaces de usuário dinâmicas e componentizadas</p>
+                  </div>
+                </div>
+
+                <!-- HTML -->
+                <div class="about__skill-card">
+                  <div class="about__skill-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                      <path d="M4.5 2h15l-1.36 15.34L12 20.5l-6.14-3.16L4.5 2zm13.14 3.5H6.36l.4 4.5h8.98l-.34 3.78L12 15.1l-3.4-.92-.22-2.48H6.04l.42 4.4 5.54 1.54 5.54-1.54.7-7.88h-9.9l-.2-2.2h10.3l.2-2.5z"/>
+                    </svg>
+                  </div>
+                  <div class="about__skill-info">
+                    <h4>HTML</h4>
+                    <p>Estruturação semântica, acessível e otimizada para web</p>
+                  </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="about__skill-card">
+                  <div class="about__skill-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                      <path d="M4.5 2h15l-1.36 15.34L12 20.5l-6.14-3.16L4.5 2zm13.14 3.5H6.36l.3 3.5h10.68l-.4 4.38L12 15.1l-3.4-.92-.22-2.48H6.04l.42 4.4 5.54 1.54 5.54-1.54.8-8.88H6.86l-.16-1.8h11.14l.2-2.5z"/>
+                    </svg>
+                  </div>
+                  <div class="about__skill-info">
+                    <h4>CSS</h4>
+                    <p>Estilização moderna, layouts responsivos e efeitos visuais</p>
+                  </div>
                 </div>
               </div>
-
-              <div class="about__detail-item">
-                <div class="about__detail-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3>Lema</h3>
-                  <p>Transformando ideias em projetos por meio da tecnologia</p>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Tecnologias ===== -->
-    <section class="skills section" id="tecnologias">
-      <div class="container">
-        <h2 class="section__title reveal">
-          Minhas <span class="text-accent">Tecnologias</span>
-        </h2>
-        <p class="section__subtitle reveal">Linguagens e ferramentas com as quais desenvolvo meus projetos</p>
-
-        <div class="skills__grid">
-          <!-- JavaScript -->
-          <div class="skill-card reveal">
-            <div class="skill-card__icon">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                <path d="M3 3h18v18H3V3zm15.65 14.7c.65 0 1.1-.3 1.45-.75.3-.4.45-.9.45-1.6 0-.85-.35-1.55-1.05-2-.6-.4-1.6-.75-2.75-1.15-1.3-.4-2.25-.8-2.75-1.25-.65-.6-.95-1.35-.95-2.25 0-1.1.4-1.95 1.25-2.6.85-.65 2-.95 3.35-.95 1.2 0 2.2.25 2.95.8.75.5 1.2 1.3 1.25 2.3h-2.35c-.05-.55-.25-.95-.6-1.25-.4-.3-1-.45-1.7-.45-.65 0-1.15.15-1.5.45-.35.3-.5.7-.5 1.2 0 .45.2.8.55 1.1.35.3 1.2.65 2.5 1.1 1.4.45 2.4.95 3 1.45.65.65 1 1.45 1 2.45 0 1.25-.45 2.2-1.35 2.85-.9.65-2.1.95-3.6.95-1.4 0-2.55-.3-3.4-.95-.85-.6-1.35-1.5-1.4-2.65h2.35c.05.7.35 1.2.8 1.5.5.3 1.2.5 2.1.5zm-8.35-.1c.5 0 .9-.15 1.2-.45.3-.3.45-.75.45-1.35v-8.3h2.35v8.35c0 1.3-.4 2.25-1.2 2.85-.8.6-1.85.9-3.2.9-.95 0-1.8-.15-2.45-.5-.65-.35-1.1-.9-1.3-1.65l2.2-.9c.1.4.25.7.45.9.2.15.45.2.75.2z"/>
-              </svg>
-            </div>
-            <h3 class="skill-card__name">JavaScript</h3>
-            <p class="skill-card__desc">Desenvolvimento interativo no frontend e backend</p>
-          </div>
-
-          <!-- Node.js -->
-          <div class="skill-card reveal">
-            <div class="skill-card__icon">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                <path d="M12 2l9.5 5.5v11L12 24l-9.5-5.5v-11L12 2zm0 2.3L4.5 8.7v8.6l7.5 4.4 7.5-4.4V8.7L12 4.3zm-1 5.2h2v6.5h-2V9.5zm1-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
-              </svg>
-            </div>
-            <h3 class="skill-card__name">Node.js</h3>
-            <p class="skill-card__desc">Ambiente de execução JavaScript para construção de APIs</p>
-          </div>
-
-          <!-- React -->
-          <div class="skill-card reveal">
-            <div class="skill-card__icon">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                <path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-7c4.97 0 9 1.79 9 4 0 1.2-.8 2.28-2.12 3.03.62 1.3 1.12 2.76 1.12 4.3 0 4.97-3.58 9-8 9-1.2 0-2.28-.8-3.03-2.12-1.3.62-2.76 1.12-4.3 1.12-4.97 0-9-3.58-9-8 0-1.2.8-2.28 2.12-3.03-.62-1.3-1.12-2.76-1.12-4.3 0-4.97 3.58-9 8-9 1.2 0 2.28.8 3.03 2.12 1.3-.62 2.76-1.12 4.3-1.12zm0 1.5c-3.87 0-7 1.34-7 3s3.13 3 7 3 7-1.34 7-3-3.13-3-7-3zm-6.06 4.44C4.38 8.86 3.5 10.36 3.5 12c0 3.87 2.69 7 6 7 .77 0 1.5-.18 2.19-.51-1.37-1.89-2.39-4.22-2.75-6.55zm12.12 0c-.36 2.33-1.38 4.66-2.75 6.55.69.33 1.42.51 2.19.51 3.31 0 6-3.13 6-7 0-1.64-.88-3.14-2.44-4.06z"/>
-              </svg>
-            </div>
-            <h3 class="skill-card__name">React</h3>
-            <p class="skill-card__desc">Criação de interfaces de usuário dinâmicas e componentizadas</p>
-          </div>
-
-          <!-- HTML -->
-          <div class="skill-card reveal">
-            <div class="skill-card__icon">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                <path d="M4.5 2h15l-1.36 15.34L12 20.5l-6.14-3.16L4.5 2zm13.14 3.5H6.36l.4 4.5h8.98l-.34 3.78L12 15.1l-3.4-.92-.22-2.48H6.04l.42 4.4 5.54 1.54 5.54-1.54.7-7.88h-9.9l-.2-2.2h10.3l.2-2.5z"/>
-              </svg>
-            </div>
-            <h3 class="skill-card__name">HTML</h3>
-            <p class="skill-card__desc">Estruturação semântica, acessível e otimizada para web</p>
-          </div>
-
-          <!-- CSS -->
-          <div class="skill-card reveal">
-            <div class="skill-card__icon">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-                <path d="M4.5 2h15l-1.36 15.34L12 20.5l-6.14-3.16L4.5 2zm13.14 3.5H6.36l.3 3.5h10.68l-.4 4.38L12 15.1l-3.4-.92-.22-2.48H6.04l.42 4.4 5.54 1.54 5.54-1.54.8-8.88H6.86l-.16-1.8h11.14l.2-2.5z"/>
-              </svg>
-            </div>
-            <h3 class="skill-card__name">CSS</h3>
-            <p class="skill-card__desc">Estilização moderna, layouts responsivos e efeitos visuais</p>
           </div>
         </div>
       </div>
@@ -345,10 +349,14 @@
           <!-- Projeto 4: Apple Manager -->
           <article class="project-card reveal">
             <div class="project-card__image">
-              <img src="assets/apple-manager.png" alt="Captura de tela do Projeto Apple Manager" loading="lazy">
+              <a href="https://apple-9uku.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card__image-link" aria-label="Abrir projeto Apple Manager">
+                <img src="assets/apple-manager.png" alt="Captura de tela do Projeto Apple Manager" loading="lazy">
+              </a>
             </div>
             <div class="project-card__content">
-              <h3 class="project-card__title">Apple Manager</h3>
+              <h3 class="project-card__title">
+                <a href="https://apple-9uku.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card__title-link">Apple Manager</a>
+              </h3>
               <p class="project-card__description">Sistema de gerenciamento de aparelhos Apple com interface responsiva para cadastro, edição, exclusão e listagem de dispositivos em tempo real, integrado a uma API REST com backend em Node.js e Express.</p>
               <div class="project-card__tags">
                 <span class="project-card__tag">JavaScript</span>
@@ -494,7 +502,6 @@
           <ul class="footer__links">
             <li><a href="#inicio" class="footer__link">Início</a></li>
             <li><a href="#sobre" class="footer__link">Sobre mim</a></li>
-            <li><a href="#tecnologias" class="footer__link">Tecnologias</a></li>
             <li><a href="#projetos" class="footer__link">Projetos</a></li>
             <li><a href="#contato" class="footer__link">Contato</a></li>
           </ul>
